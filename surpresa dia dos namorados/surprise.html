@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Surpresa Romântica - Dia dos Namorados</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #111827;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    z-index: 10;
+  }
+  nav.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #ef4444;
+    user-select: none;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #6b7280;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover,
+  nav ul li a:focus {
+    color: #ef4444;
+    outline: none;
+  }
+
+  main.container {
+    max-width: 1200px;
+    margin: 4rem auto 6rem;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    user-select: none;
+  }
+
+  h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    text-align: center;
+    margin-bottom: 0.75rem;
+  }
+  p.romantic-text {
+    max-width: 640px;
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #6b7280;
+    margin: 0 auto 3rem;
+    user-select: text;
+    text-align: center;
+  }
+
+  /* Carousel */
+  .carousel {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    overflow: hidden;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+    padding: 1rem 0;
+  }
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .carousel-item {
+    min-width: 100%;
+  }
+  .carousel-item blockquote {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  button.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #ef4444;
+    border: none;
+    width: 3rem;
+    height: 3rem;
+    opacity: 0.85;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    box-shadow: 0 2px 6px rgba(239,68,68,0.4);
+  }
+  button.carousel-control:hover,
+  button.carousel-control:focus {
+    opacity: 1;
+    outline: none;
+    background: #f87171;
+  }
+  button#prev {
+    left: 12px;
+  }
+  button#next {
+    right: 12px;
+  }
+
+  button.back-btn {
+    margin-top: 3rem;
+    background: #a01230;
+    color: white;
+    border: none;
+    padding: 1rem 3rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 6px 15px rgba(55, 65, 81, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  button.back-btn:hover,
+  button.back-btn:focus {
+    background: #881b1b;
+    outline: none;
+    transform: scale(1.05);
+  }
+  button.back-btn:active {
+    transform: scale(0.97);
+  }
+
+  /* Responsive */
+  @media (max-width: 760px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+    p.romantic-text {
+      font-size: 1.1rem;
+      max-width: 90vw;
+    }
+    main.container {
+      margin-top: 2rem;
+      margin-bottom: 4rem;
+      padding: 0 1rem;
+    }
+    button.back-btn {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.2rem;
+    }
+    button.carousel-control {
+      width: 2.8rem;
+      height: 2.8rem;
+      font-size: 1.5rem;
+      box-shadow: 0 1px 4px rgba(239,68,68,0.3);
+    }
+    button#prev {
+      left: 8px;
+    }
+    button#next {
+      right: 8px;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav class="container" role="navigation" aria-label="Navegação principal">
+    <div class="logo" aria-label="Logo Dia dos Namorados">❤️ Dia dos Namorados</div>
+    <ul>
+      <li><a href="index.html" tabindex="0">Início</a></li>
+      <li><a href="#" aria-current="page" tabindex="0">Surpresa</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container" role="main" aria-labelledby="title">
+  <h1 id="title">Uma Surpresa Especial para Você ❤️</h1>
+  <p class="romantic-text" tabindex="0">
+    "oii amor, eu preparei essa surpresa especial para Você no nosso primeiro Dia dos Namorados. Espero que goste! coloquei algumas fotos de momentos especiais que tivemos juntinhos. Cada imagem me traz uma paz e memória única e cheia de amor, espero que você sinta isso também e que queira viver muitos outros momentos assim ao meu lado. Te amo umondi! 💖"
+  </p>
+
+  <div class="carousel" aria-roledescription="carousel" aria-label="Fotos de momentos especiais nossos">
+    <div class="carousel-inner" id="carouselInner">
+      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="Imagem 1 de 7">
+        <blockquote class="imgur-embed-pub" lang="en" data-id="uxEKFjO"><a href="https://imgur.com/uxEKFjO">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+      </div>
+      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="Imagem 2 de 7">
+        <blockquote class="imgur-embed-pub" lang="en" data-id="EviEMGg"><a href="https://imgur.com/EviEMGg">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+      </div>
+      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="Imagem 3 de 7">
+        <blockquote class="imgur-embed-pub" lang="en" data-id="LuAi1At"><a href="https://imgur.com/LuAi1At">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+      </div>
+      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="Imagem 4 de 7">
+        <blockquote class="imgur-embed-pub" lang="en" data-id="SMxZJmr"><a href="https://imgur.com/SMxZJmr">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+      </div>
+      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="Imagem 5 de 7">
+        <blockquote class="imgur-embed-pub" lang="en" data-id="pdbXxS9"><a href="https://imgur.com/pdbXxS9">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+      </div>
+      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="Imagem 6 de 7">
+        <blockquote class="imgur-embed-pub" lang="en" data-id="w2Ob9Pp"><a href="https://imgur.com/w2Ob9Pp">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+      </div>
+      <div class="carousel-item" role="group" aria-roledescription="slide" aria-label="Imagem 7 de 7">
+        <blockquote class="imgur-embed-pub" lang="en" data-id="CV5U7IG"><a href="https://imgur.com/CV5U7IG">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+      </div>
+    </div>
+    <button class="carousel-control" id="prev" aria-label="Imagem anterior" title="Imagem anterior">&#10094;</button>
+    <button class="carousel-control" id="next" aria-label="Próxima imagem" title="Próxima imagem">&#10095;</button>
+  </div>
+
+  <button class="back-btn" aria-label="Voltar para a página inicial" onclick="location.href='index.html'">Voltar</button>
+</main>
+
+<script>
+  const carouselInner = document.getElementById('carouselInner');
+  const prevBtn = document.getElementById('prev');
+  const nextBtn = document.getElementById('next');
+  let currentIndex = 0;
+  const totalItems = carouselInner.children.length;
+  let autoSlideInterval;
+
+  function updateCarousel() {
+    carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    updateCarousel();
+    resetAutoSlide();
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % totalItems;
+    updateCarousel();
+    resetAutoSlide();
+  }
+
+  prevBtn.addEventListener('click', showPrev);
+  nextBtn.addEventListener('click', showNext);
+
+  // Keyboard support
+  prevBtn.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      showPrev();
+    }
+  });
+  nextBtn.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      showNext();
+    }
+  });
+
+  // Automatic slide every 4 seconds
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(() => {
+      showNext();
+    }, 4000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+  // Initialize
+  updateCarousel();
+  startAutoSlide();
+</script>
+</body>
+</html>

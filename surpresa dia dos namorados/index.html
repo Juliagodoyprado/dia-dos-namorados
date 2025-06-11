@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dia dos Namorados - Início</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+  /* Reset & base */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body, h1, p, button, nav, ul, li, a {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #111827;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Header */
+  header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    z-index: 10;
+  }
+  nav.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav .logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: #ef4444;
+    user-select: none;
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+  }
+  nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #6b7280;
+    transition: color 0.3s ease;
+  }
+  nav ul li a:hover,
+  nav ul li a:focus {
+    color: #ef4444;
+    outline: none;
+  }
+
+  main.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 6rem 2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  button.cta {
+    background-color: #ef4444;
+    color: #fff;
+    border: none;
+    padding: 1.25rem 3rem;
+    font-size: 1.75rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 24px rgba(239,68,68,0.3);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  button.cta:hover,
+  button.cta:focus {
+    background-color: #f87171;
+    outline: none;
+    transform: scale(1.05);
+  }
+  button.cta:active {
+    transform: scale(0.97);
+  }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    button.cta {
+      font-size: 1.5rem;
+      padding: 1rem 2.5rem;
+      width: 100%;
+    }
+    nav.container {
+      padding: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav class="container" role="navigation" aria-label="Navegação principal">
+    <div class="logo" aria-label="Logo Dia dos Namorados">❤️ Dia dos Namorados</div>
+    <ul>
+      <li><a href="#" tabindex="0" aria-current="page">Início</a></li>
+      <li><a href="surprise.html" tabindex="0">Surpresa</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="container" role="main">
+  <button class="cta" type="button" aria-label="Clique para ver a surpresa" onclick="location.href='surprise.html'">
+    Click aqui
+  </button>
+</main>
+</body>
+</html>
